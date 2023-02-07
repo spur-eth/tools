@@ -10,7 +10,10 @@ import deepl
 def translate(input_txt_path, output_folder, source_lang, target_lang):
     """Use DeepL API to translate an input_txt_path and write to output_folder.
 
-    Gets contents from a text file and uses DeepL API to translate them to output language (target_lang) and puts a translated output file into the output folder. If source_lang is specified, the DeepL API is called with that input for the source language and otherwise it attempts to detect the source language. The default target language is American English, but that can be altered by modifying the target_lang variable.
+    Gets contents from a text file and uses DeepL API to translate them to output language (target_lang) 
+    and puts a translated output file into the output folder. If source_lang is specified, the DeepL API is called 
+    with that input for the source language and otherwise it attempts to detect the source language. The default 
+    target language is American English, but that can be altered by modifying the target_lang variable.
     """
     source_lang_text = read_file_contents(input_txt_path)
     if source_lang == "": 
@@ -104,4 +107,4 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-    
+
