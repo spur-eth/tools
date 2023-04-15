@@ -1,3 +1,4 @@
 deepl
 tqdm
 python-dotenv
+pandas
