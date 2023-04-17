@@ -48,6 +48,26 @@ python code/translator.py \
     --target_lang=${TARGET_LANG}
 ```
 
+For running with tabular data, for instance csv files where each row are correspondent answers and some columns represent text responses in another language we can export a csv file with the respondent ids and the text responses and their desired translations by setting the --is_csv flag to tell the progam to do this and specifying what column you want to use as the id column to map the responses back to the respondents and the columns with text to translate. Note that if there is more than one column with text, the text columns must be passed as with spaces in between and it is easiest to pass them into the command directly. 
+
+For example if we have one or more surveys in .csv format in our input folder with respondent identifiers in the 'ID' column and we want to autodetect the language for each text entry in each text column (text_col1, text_col2, and textcol3) and translate it to the default (American English) and write the results to an output folder for all the surveys we could use the following command formatting: 
+
+```
+INPUT_FOLDER=<paste here>
+OUTPUT_FOLDER=<paste here>
+ID_COL='ID'
+
+
+python code/translator.py \
+    --input_folder=${INPUT_FOLDER} \
+    --output_folder=${OUTPUT_FOLDER} \
+    --source_lang=${SOURCE_LANG} \
+    --target_lang=${TARGET_LANG} \
+    --is_csv \
+    --id_col_csv=${ID_COL} \
+    --text_cols_csv text_col1 text_col2 text_col3
+```
+
 ### Other resources 
 
 - (To use the languages supported by DeepL and how they are referred to go to [this page](https://www.deepl.com/docs-api/translate-text/translate-text/) and search 'source_lang')
