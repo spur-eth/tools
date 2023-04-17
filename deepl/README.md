@@ -21,6 +21,9 @@
 
 
 ## Run
+
+#### Working with text file data
+
 Run a command like the following to use the tool to translate a folder of text files to be translated or on an individual text file: 
 
 The following command will autodetect the languages of the text documents in the INPUT_FOLDER and translate them to American English and put the translated documents (with their detected langauge and the target language added to the file names) into the OUTPUT_FOLDER: 
@@ -47,6 +50,8 @@ python code/translator.py \
     --source_lang=${SOURCE_LANG} \
     --target_lang=${TARGET_LANG}
 ```
+
+#### Working with tabular data
 
 For running with tabular data, for instance csv files where each row are correspondent answers and some columns represent text responses in another language we can export a csv file with the respondent ids and the text responses and their desired translations by setting the --is_csv flag to tell the progam to do this and specifying what column you want to use as the id column to map the responses back to the respondents and the columns with text to translate. Note that if there is more than one column with text, the text columns must be passed as with spaces in between and it is easiest to pass them into the command directly. 
 
